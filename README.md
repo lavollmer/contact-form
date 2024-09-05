@@ -64,11 +64,10 @@ This project began with the initial setup, which included creating a GitHub repo
 
 ## What I learned
 
-In this project, I learned about a lot of various items from design to props state management.
-
 Here are several things I learned throughout this project:
 
-1. **_Conditional Rendering_** 
+1. **_App.css Classes_** - I wanted an easy approach to designing the background of this application. I decided to do CSS in App.css and import it into App.jsx. This allowed me to cover the whole width and height of the screen with the light green color and format appropriately. I made a few mistakes such as wv (width view) should actually be vw(view width), etc.
+2. **_App.css Classes_** 
 
 ## Continued development
 

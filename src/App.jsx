@@ -4,9 +4,11 @@ import "./index.css";
 function App() {
   return (
     <>
-      <div className="screen">
-        <div>
-          <h1>Contact Us</h1>
+      <div className="screen font-karla">
+        <div className="boxy">
+          <div>
+            <h1 className="text-grey-dark font-bold text-4xl">Contact Us</h1>
+          </div>
         </div>
       </div>
     </>
