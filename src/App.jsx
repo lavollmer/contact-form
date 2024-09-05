@@ -29,11 +29,11 @@ function App() {
                   <h2 className="text-lg">Query Type</h2>
                 </div>
                 <div className="flex flex-row justify-center items-center w-full h-full space-x-4 text-lg">
-                  <div className="flex flex-row justify-start space-x-4 border border-grey-medium rounded-lg py-2 px-28">
+                  <div className="flex flex-row justify-start space-x-4 border border-grey-medium rounded-lg py-2 px-28 cursor-pointer hover:border-green-medium hover:shadow-lg">
                     <input type="checkbox" className="circle-checkbox" />
                     <label>General Enquiry</label>
                   </div>
-                  <div className="flex flex-row justify-start space-x-4 border border-grey-medium rounded-lg py-2 px-28">
+                  <div className="flex flex-row justify-start space-x-4 border border-grey-medium rounded-lg py-2 px-28 cursor-pointer hover:border-green-medium hover:shadow-lg">
                     <input type="checkbox" className="circle-checkbox" />
                     <label>Support Request</label>
                   </div>
@@ -46,20 +46,20 @@ function App() {
                     type="text"
                     id="text"
                     value={userInfo}
-                    className="border border-grey-medium rounded-lg py-6 px-4 text-lg"
+                    className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg"
                   />
                 </div>
               </div>
               {/* consent checkbox */}
               <div className="flex flex-row space-x-4 items-center justify-start pt-6 pb-6">
-                <input type="checkbox" id="consent" name="consent" />
+                <input type="checkbox" id="consent" name="consent" className="cursor-pointer hover:border-green-medium hover:shadow-lg" />
                 <label htmlFor="consent" className="text-grey-dark">
                   I hereby consent to being contacted by the team
                 </label>
               </div>
               {/* submit button */}
               <div className="flex flex-row items-center justify-center w-full h-full">
-                <button className="bg-green-medium rounded-lg py-4 px-80">
+                <button className="bg-green-medium rounded-lg py-4 px-80 cursor-pointer hover:border-green-lighter hover:shadow-lg">
                   <span className="text-white">Submit</span>
                 </button>
               </div>
