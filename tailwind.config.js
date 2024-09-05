@@ -9,6 +9,9 @@ module.exports = {
         "grey-medium": "hsl(186, 15%, 59%)",
         "grey-dark": "hsl(187, 24%, 22%)",
       },
+      fontFamily: {
+        "karla":["karla", "sans-serif"],
+      },
     },
   },
   plugins: [],
