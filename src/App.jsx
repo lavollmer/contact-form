@@ -28,13 +28,13 @@ function App() {
                 <div>
                   <h2 className="text-lg">Query Type</h2>
                 </div>
-                <div className="flex flex-row justify-center items-center w-full h-full space-x-4 text-lg">
-                  <div className="flex flex-row justify-start space-x-4 border border-grey-medium rounded-lg py-2 px-28 cursor-pointer hover:border-green-medium hover:shadow-lg">
-                    <input type="checkbox" className="circle-checkbox" />
+                <div className="flex flex-row justify-between items-center w-full h-full space-x-4 text-lg">
+                  <div className="flex flex-row justify-start items-center space-x-4 border border-grey-medium rounded-lg py-2 px-24 cursor-pointer hover:border-green-medium hover:shadow-lg">
+                    <input type="checkbox" className="custom-checkbox" id="general-enquiry" />
                     <label>General Enquiry</label>
                   </div>
-                  <div className="flex flex-row justify-start space-x-4 border border-grey-medium rounded-lg py-2 px-28 cursor-pointer hover:border-green-medium hover:shadow-lg">
-                    <input type="checkbox" className="circle-checkbox" />
+                  <div className="flex flex-row justify-start items-center space-x-4 border border-grey-medium rounded-lg py-2 px-24 cursor-pointer hover:border-green-medium hover:shadow-lg">
+                    <input type="checkbox" className="custom-checkbox" id="support-request" />
                     <label>Support Request</label>
                   </div>
                 </div>
