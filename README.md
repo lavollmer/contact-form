@@ -75,6 +75,7 @@ Here are several things I learned throughout this project:
 ## Useful resources
 
 - Family: [Karla](https://fonts.google.com/specimen/Karla)
+- React Forms: [React Forms](https://react.dev/reference/react-dom/components/form)
 
 ## Author
 
