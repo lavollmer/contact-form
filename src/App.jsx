@@ -14,13 +14,24 @@ function App() {
           </div>
           {/* first line of the form */}
           <div>
-            <div>
-              <form className="flex flex-row space-x-10 items-center">
+            <form className="flex flex-col">
+              <div className="flex flex-row space-x-10 items-center">
                 <Information title="First Name" value={userInfo} />
                 <Information title="Last Name" value={userInfo} />
-              </form>
-            </div>
-            <div></div>
+              </div>
+              <div>
+                <Information title="Email Address" value={userInfo} />
+              </div>
+              <div>
+                <Information title="General Message" value={userInfo} />
+              </div>
+              <div>
+                <input type="checkbox" id="consent" name="consent" />
+                <label htmlFor="consent" className="text-grey-dark">
+                  I hereby consent to being contacted by the team
+                </label>
+              </div>
+            </form>
           </div>
         </div>
       </div>
