@@ -9,7 +9,7 @@ const inputBox = ({ title,userInfo }) => {
           type="text"
           id="text"
           value={userInfo}
-          className="border border-grey-medium rounded-lg py-2 px-4 text-lg"
+          className="border border-grey-medium rounded-lg py-2 px-24 text-lg"
         />
       </div>
     </div>

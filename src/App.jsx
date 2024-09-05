@@ -16,7 +16,7 @@ function App() {
           <div className="flex flex-col pt-6">
             <form className="flex flex-col space-y-4">
               {/* input boxes with reusable box */}
-              <div className="flex flex-row space-x-10 items-center">
+              <div className="flex flex-row justify-evenly items-center space-x-4">
                 <Information title="First Name" value={userInfo} />
                 <Information title="Last Name" value={userInfo} />
               </div>
