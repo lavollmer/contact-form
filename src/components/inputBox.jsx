@@ -4,7 +4,7 @@ const inputBox = ({ title,userInfo }) => {
   return (
     <div>
       <div className="flex flex-col space-y-2">
-        <label className="text-lg">{title}</label>
+        <label className="text-lg">{title} *</label>
         <input
           type="text"
           id="text"
