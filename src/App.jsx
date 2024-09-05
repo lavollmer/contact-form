@@ -1,7 +1,10 @@
 import "./App.css";
 import "./index.css";
+import Information from "./components/inputBox";
 
 function App() {
+  const title = "";
+  const userInfo = "";
   return (
     <>
       <div className="screen">
@@ -12,15 +15,9 @@ function App() {
           {/* first line of the form */}
           <div>
             <div>
-              <form className="flex flex-row justify-between items-center">
-                <div className="flex flex-col justify-start space-y-2">
-                  <label className="text-md">First Name</label>
-                  <input type="text" id="text" className="border border-grey-medium rounded-lg" />
-                </div>
-                <div>
-                  <label>Last Name</label>
-                  <input type="text" id="text" />
-                </div>
+              <form className="flex flex-row space-x-10 items-center">
+                <Information title="First Name" value={userInfo} />
+                <Information title="Last Name" value={userInfo} />
               </form>
             </div>
             <div></div>
