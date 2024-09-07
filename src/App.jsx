@@ -2,10 +2,34 @@ import "./App.css";
 import "./index.css";
 import Information from "./components/inputBox";
 import ErrorBoundary from "./components/ErrorBoundary";
+import React, { useState } from "react";
 
 function App() {
   const title = "";
   const userInfo = "";
+
+  const [firstName,setfirstName] = useState("");
+  const [lastName,setlastName] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = {};
+
+    if (!firstName) {
+      newErrors.firstName = "First Name is required";
+    }
+
+    if (!lastName) {
+      newErrors.lastName = "Last Name is required";
+
+      setErrors(newErrors);
+
+      if (Object.keys(newErrors).length > 0) {
+        return;
+      }
+    }
+  }
 
   return (
     <>
