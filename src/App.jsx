@@ -124,7 +124,7 @@ function App() {
                 </div>
                 {/* submit button */}
                 <div className="flex flex-row items-center justify-center w-full h-full">
-                  <button className="bg-green-medium rounded-lg py-4 px-80 cursor-pointer hover:border-green-lighter hover:shadow-lg">
+                  <button className="bg-green-medium rounded-lg w-full h-full p-4 cursor-pointer hover:border-green-lighter hover:shadow-lg">
                     <span className="text-white text-lg">Submit</span>
                   </button>
                 </div>
