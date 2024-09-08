@@ -5,11 +5,10 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import React, { useState } from "react";
 
 function App() {
-  const title = "";
-  const userInfo = "";
-
+  const [userInfo, setUserInfo] = useState("");
   const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -22,6 +21,10 @@ function App() {
 
     if (!lastName) {
       newErrors.lastName = "Last Name is required";
+
+      if (!message) {
+        newErrors.message = "A general message is required";
+      }
 
       setErrors(newErrors);
 
@@ -98,9 +101,13 @@ function App() {
                     <input
                       type="text"
                       id="text"
-                      value={userInfo}
+                      value={message}
+                      onChange={(e) => setLastName(e.target.value)}
                       className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg"
                     />
+                    {errors.message && (
+                      <div className="text-red-500">{errors.message}</div>
+                    )}
                   </div>
                 </div>
                 {/* consent checkbox */}
