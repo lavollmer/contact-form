@@ -5,10 +5,10 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import React, { useState } from "react";
 
 function App() {
-  const [userInfo, setUserInfo] = useState("");
-  const [firstName, setfirstName] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
+  const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -21,16 +21,20 @@ function App() {
 
     if (!lastName) {
       newErrors.lastName = "Last Name is required";
+    }
 
-      if (!message) {
-        newErrors.message = "A general message is required";
-      }
+    if (!email) {
+      newErrors.message = "An email is required";
+    }
 
-      setErrors(newErrors);
+    if (!message) {
+      newErrors.message = "A general message is required";
+    }
 
-      if (Object.keys(newErrors).length > 0) {
-        return;
-      }
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
+      return;
     }
 
     console.log("Form submitted");
@@ -46,28 +50,29 @@ function App() {
           {/* first line of the form */}
           <div className="flex flex-col pt-6">
             <ErrorBoundary>
-              <form className="flex flex-col space-y-4">
+              <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                 {/* input boxes with reusable box */}
                 <div className="flex flex-row justify-evenly items-center space-x-4">
-                  <div>
-                    <Information
-                      title="First Name"
-                      value={firstName}
-                      onChange={(e) => setfirstName(e.target.value)}
-                      error={errors.firstName}
-                    />
-                  </div>
-                  <div>
-                    <Information
-                      title="Last Name"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      error={errors.lastName}
-                    />
-                  </div>
+                  <InputBox
+                    title="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    error={errors.firstName}
+                  />
+                  <InputBox
+                    title="Last Name"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    error={errors.lastName}
+                  />
                 </div>
                 <div className="flex flex-col space-y-4">
-                  <Information title="Email Address" value={userInfo} />
+                <InputBox
+                    title="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    error={errors.email}
+                  />
                 </div>
                 {/* Query type */}
                 <div className="flex flex-col space-y-4">
@@ -100,9 +105,9 @@ function App() {
                       type="text"
                       id="text"
                       value={message}
-                      onChange={(e) => setLastName(e.target.value)}
+                      onChange={(e) => setMessage(e.target.value)}
                       className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg"
-                      error={errors.message}
+                      error={errors.Message}
                     />
                   </div>
                 </div>
@@ -115,7 +120,7 @@ function App() {
                     className="custom-checkbox"
                   />
                   <label htmlFor="consent" className="text-grey-dark">
-                    I hereby consent to being contacted by the team
+                    I consent to the processing of my personal data
                   </label>
                 </div>
                 {/* submit button */}
