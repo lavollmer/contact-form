@@ -49,6 +49,10 @@ Users should be able to:
 
 This project began with the initial setup, which included creating a GitHub repository, initializing a Vite project with ReactJS, and integrating TailwindCSS. I configured TailwindCSS to incorporate the project's design specifications, such as fonts and colors. After ensuring the basic elements were operational through an initial commit, I proceeded to remove the default ReactJS template content to start with a clean slate.
 
+I started this project by working through the design of the contact form with a reusable input box. I styled it with the design assets presented such as colors, Google Font and design itself. I worked through adding custom checkboxes and a submit button as well.
+
+The second part was more challenging as I was working through the form validation of the contact form. This presented some challenges with props management, state management and onChange handlers. 
+
 
 ## Built with
 
@@ -67,7 +71,8 @@ This project began with the initial setup, which included creating a GitHub repo
 Here are several things I learned throughout this project:
 
 1. **_App.css Classes_** - I wanted an easy approach to designing the background of this application. I decided to do CSS in App.css and import it into App.jsx. This allowed me to cover the whole width and height of the screen with the light green color and format appropriately. I made a few mistakes such as wv (width view) should actually be vw(view width), etc.
-2. **_App.css Classes_** 
+2. **_Custom Checkbox_** -
+3. **_Form Validation_** -
 
 ## Continued development
 
