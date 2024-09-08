@@ -8,8 +8,8 @@ function App() {
   const title = "";
   const userInfo = "";
 
-  const [firstName,setfirstName] = useState("");
-  const [lastName,setlastName] = useState("");
+  const [firstName, setfirstName] = useState("");
+  const [lastName, setlastName] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -29,7 +29,7 @@ function App() {
         return;
       }
     }
-  }
+  };
 
   return (
     <>
@@ -44,8 +44,26 @@ function App() {
               <form className="flex flex-col space-y-4">
                 {/* input boxes with reusable box */}
                 <div className="flex flex-row justify-evenly items-center space-x-4">
-                  <Information title="First Name" value={userInfo} />
-                  <Information title="Last Name" value={userInfo} />
+                  <div>
+                    <Information
+                      title="First Name"
+                      value={firstName}
+                      onChange={(e) => setfirstName(e.target.value)}
+                    />
+                    {errors.firstName && (
+                      <div className="text-red-500">{errors.firstName}</div>
+                    )}
+                  </div>
+                  <div>
+                    <Information
+                      title="Last Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                    />
+                    {errors.firstName && (
+                      <div className="text-red-500">{errors.firstName}</div>
+                    )}
+                  </div>
                 </div>
                 <div className="flex flex-col space-y-4">
                   <Information title="Email Address" value={userInfo} />
