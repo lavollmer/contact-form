@@ -32,6 +32,8 @@ function App() {
         return;
       }
     }
+
+    console.log("Form submitted");
   };
 
   return (
@@ -52,20 +54,16 @@ function App() {
                       title="First Name"
                       value={firstName}
                       onChange={(e) => setfirstName(e.target.value)}
+                      error={errors.firstName}
                     />
-                    {errors.firstName && (
-                      <div className="text-red-500">{errors.firstName}</div>
-                    )}
                   </div>
                   <div>
                     <Information
                       title="Last Name"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
+                      error={errors.lastName}
                     />
-                    {errors.firstName && (
-                      <div className="text-red-500">{errors.firstName}</div>
-                    )}
                   </div>
                 </div>
                 <div className="flex flex-col space-y-4">
@@ -104,10 +102,8 @@ function App() {
                       value={message}
                       onChange={(e) => setLastName(e.target.value)}
                       className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg"
+                      error={errors.message}
                     />
-                    {errors.message && (
-                      <div className="text-red-500">{errors.message}</div>
-                    )}
                   </div>
                 </div>
                 {/* consent checkbox */}
