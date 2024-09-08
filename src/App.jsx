@@ -1,6 +1,6 @@
 import "./App.css";
 import "./index.css";
-import Information from "./components/inputBox";
+import InputBox from "./components/inputBox";
 import ErrorBoundary from "./components/ErrorBoundary";
 import React, { useState } from "react";
 
@@ -9,6 +9,8 @@ function App() {
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
+  const [enquiry, setEnquiry] = useState("");
+  const [support, setSupport] = useState("");
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -24,7 +26,15 @@ function App() {
     }
 
     if (!email) {
-      newErrors.message = "An email is required";
+      newErrors.email = "An email is required";
+    }
+
+    if (!enquiry) {
+      newErrors.enquiry = "Please select an query type";
+    }
+
+    if (!support) {
+      newErrors.support = "Please select an query type";
     }
 
     if (!message) {
@@ -67,7 +77,7 @@ function App() {
                   />
                 </div>
                 <div className="flex flex-col space-y-4">
-                <InputBox
+                  <InputBox
                     title="Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -85,6 +95,10 @@ function App() {
                         type="checkbox"
                         className="custom-checkbox"
                         id="general-enquiry"
+                        title="General Enquiry"
+                        value={enquiry}
+                        onChange={(e) => setEnquiry(e.target.value)}
+                        error={errors.enquiry}
                       />
                       <label>General Enquiry</label>
                     </div>
@@ -93,6 +107,9 @@ function App() {
                         type="checkbox"
                         className="custom-checkbox"
                         id="support-request"
+                        value={support}
+                        onChange={(e) => setSupport(e.target.value)}
+                        error={errors.support}
                       />
                       <label>Support Request</label>
                     </div>
