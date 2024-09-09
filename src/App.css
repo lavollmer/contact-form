@@ -8,6 +8,16 @@
   background-color: hsl(148, 38%, 91%);
 }
 
+.screenMobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: hsl(148, 38%, 91%);
+}
+
 .boxy {
   display: flex;
   flex-direction: column;
@@ -16,6 +26,18 @@
   background-color: white;
   border: 1px solid white;
   padding: 40px;
+  border-radius: 20px;
+  font-family:karla;
+}
+
+.boxyMobile {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 90vw;
+  background-color: white;
+  border: 1px solid white;
+  padding: 14px;
   border-radius: 20px;
   font-family:karla;
 }
