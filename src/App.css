@@ -11,7 +11,7 @@
 .boxy {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 90vh;
   width: 80vw;
   background-color: white;
   border: 1px solid white;

@@ -58,11 +58,11 @@ function App() {
             <h1 className="text-grey-dark font-bold text-4xl">Contact Us</h1>
           </div>
           {/* first line of the form */}
-          <div className="flex flex-col pt-6">
+          <div className="flex flex-col pt-6 w-full">
             <ErrorBoundary>
-              <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
+              <form className="flex flex-col space-y-4 w-full" onSubmit={handleSubmit}>
                 {/* input boxes with reusable box */}
-                <div className="flex flex-row justify-evenly items-center space-x-4">
+                <div className="flex flex-row space-x-4 w-full">
                   <InputBox
                     title="First Name"
                     value={firstName}
