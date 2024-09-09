@@ -53,7 +53,7 @@ function App() {
     }
 
     console.log("Form submitted");
-    alert("Form submitted");
+    alert("Form submitted successfully!");
   };
 
   return (
@@ -68,10 +68,7 @@ function App() {
           {/* first line of the form */}
           <div className="flex flex-col pt-6 w-full">
             <ErrorBoundary>
-              <form
-                className="flex flex-col space-y-4 w-full"
-                onSubmit={handleSubmit}
-              >
+            <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
                 {/* input boxes with reusable box */}
                 <div className="flex flex-row space-x-4 w-full">
                   <div className="flex-1">
@@ -111,27 +108,33 @@ function App() {
                   <div className="flex flex-row space-x-4 text-lg">
                     <div className="flex flex-row justify-center items-center space-x-8 border border-grey-medium rounded-lg py-2 px-4 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg w-full">
                       <div className="flex items-center space-x-4 text-sm md:text-lg">
-                        <input
-                          type="checkbox"
-                          className="custom-checkbox"
-                          id="enquiry-request"
-                          value={enquiry}
-                          onChange={(e) => setEnquiry(e.target.value)}
-                        />
-                        <label>Enquiry Request</label>
-                      </div>
+                      <input
+                        type="checkbox"
+                        className="custom-checkbox"
+                        id="enquiry-request"
+                        checked={enquiry}
+                        onChange={(e) => setEnquiry(e.target.checked)}
+                      />
+                      <label htmlFor="enquiry-request" className="ml-2">Enquiry Request</label>
+                      {errors.queryType && (
+                        <div className="text-red-500">{errors.queryType}</div>
+                      )}
+                    </div>
                     </div>
                     <div className="flex flex-row justify-center items-center space-x-4 border border-grey-medium rounded-lg py-2 px-4 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg w-full">
-                      <div className="flex items-center space-x-4 text-sm md:text-lg">
-                        <input
-                          type="checkbox"
-                          className="custom-checkbox"
-                          id="support-request"
-                          value={support}
-                          onChange={(e) => setSupport(e.target.value)}
-                        />
-                        <label>Support Request</label>
-                      </div>
+                    <div className="flex items-center space-x-4 text-sm md:text-lg">
+                      <input
+                        type="checkbox"
+                        className="custom-checkbox"
+                        id="support-request"
+                        checked={support}
+                        onChange={(e) => setSupport(e.target.checked)}
+                      />
+                      <label htmlFor="support-request" className="ml-2">Support Request</label>
+                      {errors.queryType && (
+                        <div className="text-red-500">{errors.queryType}</div>
+                      )}
+                    </div>
                     </div>
                   </div>
                 </div>
