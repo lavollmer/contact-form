@@ -124,8 +124,10 @@ function App() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg"
-                      error={errors.Message}
                     />
+                    {errors.message && (
+                      <div className="text-red-500">{errors.message}</div>
+                    )}
                   </div>
                 </div>
                 {/* consent checkbox */}
