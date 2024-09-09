@@ -9,8 +9,9 @@ function App() {
   const [lastName, setLastName] = useState("");
   const [message, setMessage] = useState("");
   const [email, setEmail] = useState("");
-  const [enquiry, setEnquiry] = useState("");
-  const [support, setSupport] = useState("");
+  const [enquiry, setEnquiry] = useState(false);
+  const [support, setSupport] = useState(false);
+  const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
@@ -41,6 +42,10 @@ function App() {
       newErrors.message = "A general message is required";
     }
 
+    if (!consent) {
+      newErrors.consent = "Consent is required";
+    }
+
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
@@ -48,6 +53,7 @@ function App() {
     }
 
     console.log("Form submitted");
+    alert("Form submitted");
   };
 
   return (
@@ -163,6 +169,8 @@ function App() {
                     id="consent"
                     name="consent"
                     className="custom-checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
                   />
                   <label
                     htmlFor="consent"
@@ -170,15 +178,16 @@ function App() {
                   >
                     I consent to the processing of my personal data
                   </label>
+                  {errors.consent && (
+                    <div className="text-red-500">{errors.consent}</div>
+                  )}
                 </div>
                 {/* submit button */}
-                <div className="flex flex-row items-center justify-center w-full h-full">
-                  <button className="bg-green-medium rounded-lg w-full h-full p-2 md:p-4 cursor-pointer hover:border-green-lighter hover:shadow-lg">
-                    <span className="text-white text-sm md:text-lg">
-                      Submit
-                    </span>
+                {/* <div className="flex flex-row items-center justify-center w-full h-full"> */}
+                  <button className="bg-green-medium text-white text-sm md:text-lg rounded-lg w-full h-full p-2 md:p-4 cursor-pointer hover:border-green-lighter hover:shadow-lg">
+                    Submit
                   </button>
-                </div>
+                {/* </div> */}
               </form>
             </ErrorBoundary>
           </div>
