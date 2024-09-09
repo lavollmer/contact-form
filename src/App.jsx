@@ -79,36 +79,28 @@ function App() {
                       title="First Name"
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
+                      error={errors.firstName}
                     />
-                    {errors.firstName && (
-                      <div className="text-red-500 text-sm md:text-lg">
-                        {errors.firstName}
-                      </div>
-                    )}
                   </div>
                   <div className="flex-1">
                     <InputBox
                       title="Last Name"
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
+                      error={errors.lastName}
                     />
-                    {errors.lastName && (
-                      <div className="text-red-500 text-sm md:text-lg">
-                        {errors.lastName}
-                      </div>
-                    )}
                   </div>
                 </div>
-                <div className="flex flex-col">
-                  <InputBox
-                    title="Email Address"
+                <div className="flex flex-col space-y-4">
+                  <label className="text-lg">Email *</label>
+                  <input
+                    type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg w-full"
                   />
                   {errors.email && (
-                    <div className="text-red-500 text-sm md:text-lg">
-                      {errors.email}
-                    </div>
+                    <div className="text-red-500">{errors.email}</div>
                   )}
                 </div>
                 {/* Query type */}
@@ -143,24 +135,17 @@ function App() {
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div className="flex flex-col space-y-1 md:space-y-2">
-                    <label className="text-sm md:text-lg">
-                      General Message *
-                    </label>
-                    <input
-                      type="text"
-                      id="text"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="border border-grey-medium rounded-lg py-6 px-4 text-sm md:text-lg cursor-pointer hover:border-green-medium hover:shadow-lg"
-                    />
-                    {errors.message && (
-                      <div className="text-red-500 text-sm md:text-lg">
-                        {errors.message}
-                      </div>
-                    )}
-                  </div>
+                <div className="flex flex-col space-y-4">
+                  <label className="text-lg">General Message *</label>
+                  <input
+                    type="text"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg w-full"
+                  />
+                  {errors.message && (
+                    <div className="text-red-500">{errors.message}</div>
+                  )}
                 </div>
                 {/* consent checkbox */}
                 <div className="flex flex-row space-x-4 items-center justify-start pt-2 pb-2 md:pt-6 md:pb-6">
@@ -184,9 +169,9 @@ function App() {
                 </div>
                 {/* submit button */}
                 {/* <div className="flex flex-row items-center justify-center w-full h-full"> */}
-                  <button className="bg-green-medium text-white text-sm md:text-lg rounded-lg w-full h-full p-2 md:p-4 cursor-pointer hover:border-green-lighter hover:shadow-lg">
-                    Submit
-                  </button>
+                <button className="bg-green-medium text-white text-sm md:text-lg rounded-lg w-full h-full p-2 md:p-4 cursor-pointer hover:border-green-lighter hover:shadow-lg">
+                  Submit
+                </button>
                 {/* </div> */}
               </form>
             </ErrorBoundary>
