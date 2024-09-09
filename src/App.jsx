@@ -60,21 +60,28 @@ function App() {
           {/* first line of the form */}
           <div className="flex flex-col pt-6 w-full">
             <ErrorBoundary>
-              <form className="flex flex-col space-y-4 w-full" onSubmit={handleSubmit}>
+              <form
+                className="flex flex-col space-y-4 w-full"
+                onSubmit={handleSubmit}
+              >
                 {/* input boxes with reusable box */}
                 <div className="flex flex-row space-x-4 w-full">
-                  <InputBox
-                    title="First Name"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    error={errors.firstName}
-                  />
-                  <InputBox
-                    title="Last Name"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    error={errors.lastName}
-                  />
+                  <div className="flex-1">
+                    <InputBox
+                      title="First Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      error={errors.firstName}
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <InputBox
+                      title="Last Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      error={errors.lastName}
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col space-y-4">
                   <InputBox
@@ -89,32 +96,32 @@ function App() {
                   <div>
                     <h2 className="text-lg">Query Type *</h2>
                   </div>
-                  <div className="flex flex-row justify-between items-center w-full h-full space-x-4 text-lg">
-                    <div className="flex flex-row justify-start items-center space-x-4 border border-grey-medium rounded-lg py-2 px-24 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg">
-                    <input
-                        type="checkbox"
-                        className="custom-checkbox"
-                        id="enquiry-request"
-                        value={enquiry}
-                        onChange={(e) => setEnquiry(e.target.value)}
-                      />
-                      <label>Enquiry Request</label>
-                      {errors.enquiry && (
-                        <div className="text-red-500">{errors.enquiry}</div>
-                      )}
+                  <div className="flex flex-row space-x-4 text-lg">
+                    <div className="flex flex-row justify-center items-center space-x-8 border border-grey-medium rounded-lg py-2 px-4 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg w-full">
+                      <div className="flex items-center p-2 space-x-4">
+                        <input
+                          type="checkbox"
+                          className="custom-checkbox"
+                          id="enquiry-request"
+                          value={enquiry}
+                          onChange={(e) => setEnquiry(e.target.value)}
+                        />
+                        <label>Enquiry Request</label>
+                       
+                      </div>
                     </div>
-                    <div className="flex flex-row justify-start items-center space-x-4 border border-grey-medium rounded-lg py-2 px-24 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg">
-                    <input
-                        type="checkbox"
-                        className="custom-checkbox"
-                        id="support-request"
-                        value={support}
-                        onChange={(e) => setSupport(e.target.value)}
-                      />
-                      <label>Support Request</label>
-                      {errors.support && (
-                        <div className="text-red-500">{errors.support}</div>
-                      )}
+                    <div className="flex flex-row justify-center items-center space-x-4 border border-grey-medium rounded-lg py-2 px-4 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg w-full">
+                      <div className="flex items-center space-x-4">
+                        <input
+                          type="checkbox"
+                          className="custom-checkbox"
+                          id="support-request"
+                          value={support}
+                          onChange={(e) => setSupport(e.target.value)}
+                        />
+                        <label>Support Request</label>
+                        
+                      </div>
                     </div>
                   </div>
                 </div>
