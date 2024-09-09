@@ -91,27 +91,30 @@ function App() {
                   </div>
                   <div className="flex flex-row justify-between items-center w-full h-full space-x-4 text-lg">
                     <div className="flex flex-row justify-start items-center space-x-4 border border-grey-medium rounded-lg py-2 px-24 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg">
-                      <input
+                    <input
                         type="checkbox"
                         className="custom-checkbox"
-                        id="general-enquiry"
-                        title="General Enquiry"
+                        id="enquiry-request"
                         value={enquiry}
                         onChange={(e) => setEnquiry(e.target.value)}
-                        error={errors.enquiry}
                       />
-                      <label>General Enquiry</label>
+                      <label>Enquiry Request</label>
+                      {errors.enquiry && (
+                        <div className="text-red-500">{errors.enquiry}</div>
+                      )}
                     </div>
                     <div className="flex flex-row justify-start items-center space-x-4 border border-grey-medium rounded-lg py-2 px-24 cursor-pointer hover:border-green-medium hover:bg-green-lighter hover:bg-opacity-80 hover:shadow-lg">
-                      <input
+                    <input
                         type="checkbox"
                         className="custom-checkbox"
                         id="support-request"
                         value={support}
                         onChange={(e) => setSupport(e.target.value)}
-                        error={errors.support}
                       />
                       <label>Support Request</label>
+                      {errors.support && (
+                        <div className="text-red-500">{errors.support}</div>
+                      )}
                     </div>
                   </div>
                 </div>
