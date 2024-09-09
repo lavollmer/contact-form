@@ -77,6 +77,7 @@ function App() {
                       value={firstName}
                       onChange={(e) => setFirstName(e.target.value)}
                       error={errors.firstName}
+                      aria-label="First Name"
                     />
                   </div>
                   <div className="flex-1">
@@ -85,6 +86,7 @@ function App() {
                       value={lastName}
                       onChange={(e) => setLastName(e.target.value)}
                       error={errors.lastName}
+                      aria-label="Last Name"
                     />
                   </div>
                 </div>
@@ -94,6 +96,7 @@ function App() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    aria-label="Email"
                     className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg w-full"
                   />
                   {errors.email && (
@@ -112,6 +115,7 @@ function App() {
                         type="checkbox"
                         className="custom-checkbox"
                         id="enquiry-request"
+                        aria-label="Enquiry Request"
                         checked={enquiry}
                         onChange={(e) => setEnquiry(e.target.checked)}
                       />
@@ -127,6 +131,7 @@ function App() {
                         type="checkbox"
                         className="custom-checkbox"
                         id="support-request"
+                        aria-label="Support Request"
                         checked={support}
                         onChange={(e) => setSupport(e.target.checked)}
                       />
@@ -142,6 +147,7 @@ function App() {
                   <label className="text-lg">General Message *</label>
                   <input
                     type="text"
+                    aria-label="General Message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     className="border border-grey-medium rounded-lg py-6 px-4 text-lg cursor-pointer hover:border-green-medium hover:shadow-lg w-full"
@@ -157,6 +163,7 @@ function App() {
                     id="consent"
                     name="consent"
                     className="custom-checkbox"
+                    aria-label="Consent"
                     checked={consent}
                     onChange={(e) => setConsent(e.target.checked)}
                   />

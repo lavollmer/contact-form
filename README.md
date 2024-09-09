@@ -48,6 +48,7 @@ Users should be able to:
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Netlify Contact Form Laura Dev](https://contact-form-lauradev.netlify.app/)
+- Github Repo: [Laura Dev Github Repo Contact Form](https://github.com/lavollmer/contact-form)
 
 ## My Process
 
@@ -89,6 +90,7 @@ I will continue to work on reinforcing ReactJS fundamentals while pushing my kno
 
 - Family: [Karla](https://fonts.google.com/specimen/Karla)
 - React Forms: [React Forms](https://react.dev/reference/react-dom/components/form)
+- Form Labels for Accessibility: [Form Labels](https://dequeuniversity.com/rules/axe/4.9/label)
 
 ## Author
 
